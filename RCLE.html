@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Consentimento Livre e Esclarecido</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #consent-form {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        #consent-form label {
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        #consent-form input[type="checkbox"] {
+            display: inline-block;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        #consent-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        #consent-form button:hover {
+            background-color: #3e8e41;
+        }
+
+        #consent-form .continue-button {
+            background-color: #2196F3;
+        }
+
+        #consent-form .continue-button:hover {
+            background-color: #0D8CF0;
+        }
+
+        #pdf-modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        #pdf-modal .pdf-object {
+            width: 100%;
+            height: 100%;
+        }
+
+        #registro-texto {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 30px;
+            margin-bottom: 10px;
+            height: calc(100% - 100px);
+            overflow: auto;
+            width: 100%
+        }
+
+        .justified-textarea {
+            text-align: justify;
+        }
+    </style>
+<script>
+    var buttonClicked = false;
+
+    function continueToNextPage() {
+        if (!buttonClicked) {
+            buttonClicked = true;
+            const checkbox = document.getElementById("consent-checkbox");
+            if (checkbox.checked) {
+                // Abrir a nova página
+                window.open('SimuladorAutoteste.html', '_blank', 'width=600,height=700');
+            } else {
+                alert("Por favor, leia e concorde com o termo antes de continuar.");
+            }
+        }
+    }
+</script>
+<body>
+    <h1>Registro de Consentimento Livre e Esclarecido</h1>
+    <div id="consent-form">
+        <div class="justified-textarea">
+            <textarea id="registro-textarea" rows="30" cols="70" readonly>
+                Registro de Consentimento Livre e Esclarecido
+        
+Você está sendo convidado(a) para participar da pesquisa “Desenvolvimento de um protótipo de registro eletrônico para notificação de resultados de autotestes de COVID-19”, que visa desenvolver e avaliar a aplicabilidade de um registro eletrônico para notificação de resultados de autotestes para a COVID-19, suas limitações e benefícios.
+
+Sua participação será online, com duração de aproximadamente 15 (quinze) minutos e envolve: 1) a leitura atenta e, se concordar, a assinatura deste RCLE; 2) recebimento por e-mail e leitura de uma imagem simulando um resultado de autoteste de COVID-19; 3) o registro do resultado fictício por meio de um aplicativo para celular, computador ou plataforma de notificação eletrônica via web; 4) preenchimento de um questionário anônimo, incluindo informações sociodemográficas (sexo, faixa etária e escolaridade por faixa) e percepções sobre o uso de notificação eletrônica de autoteste de COVID-19. Este protótipo de registro eletrônico para notificação de resultados de autoteste COVID-19 é de propriedade exclusiva de seus desenvolvedores e, para atender as leis de propriedade intelectual, é importante mantê-lo em sigilo e não compartilhá-lo com amigos ou familiares.
+
+Os riscos associados à participação são relacionados ao desconforto do preenchimento on-line, que dura de cinco a quinze minutos, e à possibilidade de exposição das informações registradas, inerentes a qualquer pesquisa via internet. Para minimizar este risco, não serão coletadas informações de identificação nominal. Os resultados do questionário serão enviados às autoras por e-mail e armazenados exclusivamente em seus computadores pessoais. Ademais, a propriedade das informações geradas será de domínio público, divulgadas no formato de dissertação de mestrado.  
+
+Quanto aos benefícios, o registro eletrônico e as informações obtidas dos participantes poderão contribuir para o debate sobre a pertinência e aplicabilidade do uso de estratégias eletrônicas/digitais para o monitoramento de COVID-19, quando registradas pelo próprio indivíduo acometido por esta infecção de transmissão respiratória.
+
+Sua participação é voluntária e sua recusa não acarretará qualquer penalidade. Não haverá remuneração ou custos relacionados à sua participação. Entretanto, por ser anônimo, após registrar eletronicamente sua concordância e preencher o questionário, não será mais possível remover suas informações do banco de dados. 
+
+O participante que se sentir prejudicado por esta pesquisa pode se dirigir ao Comitê de Ética em Pesquisa da Escola Nacional de Saúde Pública Sergio Arouca (CEP/ENSP), da Fundação Oswaldo Cruz, instância responsável pela apreciação dos aspectos éticos desta pesquisa para zelar pela proteção à dignidade, autonomia e direitos dos participantes. O participante que sofrer danos comprovadamente decorrentes desta pesquisa pode reivindicar indenização conforme a lei brasileira. 
+
+Caso tenha alguma dúvida sobre esta pesquisa, você pode contactar a pesquisadora responsável ou o CEP/ENSP:
+Pesquisadora responsável: Thais Bonato de Arruda. Endereço: R. Coronel Amazonas Marcondes, 1217, apto 32. Curitiba – PR. Telefone: (41) 99166-8687. E-mail: thais.bonato9@gmail.com.
+Comitê de Ética em Pesquisa da ENSP/Fiocruz. Escola Nacional de Saúde Pública Sérgio Arouca, Fundação Oswaldo Cruz. Rua Leopoldo Bulhões 1480, térreo. Manguinhos. Rio de Janeiro – RJ. Telefone: (21) 2598-2863. E-mail: cep.ensp@fiocruz.br
+
+ 
+            </textarea>
+        </div>
+        <label for="consent-checkbox">Li e concordo em participar:</label>
+        <input type="checkbox" id="consent-checkbox" required>
+        <button class="continue-button" onclick="continueToNextPage()">Continuar</button>
+    </div>
+</body>
+</html>
